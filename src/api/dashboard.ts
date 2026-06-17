@@ -3,6 +3,8 @@ import { supabase } from './supabase';
 export interface CourseProgress {
   course_id: string;
   title: string;
+  description: string | null;
+  category: string | null;
   thumbnail_url: string | null;
   youtube_playlist_id: string;
   lesson_count: number;
@@ -26,6 +28,8 @@ export async function getDashboardData(): Promise<DashboardData> {
       courses (
         id,
         title,
+        description,
+        category,
         thumbnail_url,
         lesson_count,
         youtube_playlist_id
@@ -48,6 +52,8 @@ export async function getDashboardData(): Promise<DashboardData> {
       courseMap.set(row.course_id, {
         course_id: row.course_id,
         title: course.title,
+        description: course.description ?? null,
+        category: course.category ?? null,
         thumbnail_url: course.thumbnail_url,
         youtube_playlist_id: course.youtube_playlist_id,
         lesson_count: course.lesson_count ?? 0,

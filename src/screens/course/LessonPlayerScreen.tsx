@@ -18,6 +18,7 @@ import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { CatalogStackParamList } from '../../navigation/CatalogStack';
 import { syncCourse, syncLesson } from '../../api/catalog';
 import { getNote, saveNote, getLessonCompleted, markLessonComplete } from '../../api/learner';
+import { hasDailyReminder, scheduleDailyReminder } from '../../api/notifications';
 import { useAuth } from '../../context/AuthContext';
 import { colors, spacing, radius } from '../../constants/theme';
 import { formatDuration } from '../../utils/format';
@@ -69,7 +70,7 @@ export default function LessonPlayerScreen({ navigation, route }: Props) {
     } else {
       deactivateKeepAwake(KEEP_AWAKE_TAG);
     }
-    return () => deactivateKeepAwake(KEEP_AWAKE_TAG);
+    return () => { deactivateKeepAwake(KEEP_AWAKE_TAG); };
   }, [playing]);
 
   // Sync course & lesson to Supabase, then load notes + progress
@@ -141,6 +142,11 @@ export default function LessonPlayerScreen({ navigation, route }: Props) {
     try {
       await markLessonComplete(lessonIdRef.current, courseIdRef.current, user.id);
       setCompleted(true);
+      // Refresh daily reminder so the body reflects any streak change
+      const hasReminder = await hasDailyReminder();
+      if (hasReminder) {
+        scheduleDailyReminder(0); // streak will be recalculated on next dashboard load
+      }
     } finally {
       setCompleting(false);
     }

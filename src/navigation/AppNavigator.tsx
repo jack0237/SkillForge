@@ -6,6 +6,7 @@ import { Home, Search, BookOpen, User } from 'lucide-react-native';
 import CatalogStack from './CatalogStack';
 import { CatalogStackParamList } from './CatalogStack';
 import DashboardScreen from '../screens/home/DashboardScreen';
+import MyCoursesScreen from '../screens/learning/MyCoursesScreen';
 import { colors, spacing } from '../constants/theme';
 
 export type AppTabParamList = {
@@ -50,10 +51,9 @@ export default function AppNavigator() {
 
       <Tab.Screen
         name="My Learning"
+        component={MyCoursesScreen}
         options={{ tabBarIcon: ({ color, size }) => <BookOpen size={size} color={color} strokeWidth={2} /> }}
-      >
-        {() => <Placeholder label="My Courses — Issue #8" />}
-      </Tab.Screen>
+      />
 
       <Tab.Screen
         name="Profile"

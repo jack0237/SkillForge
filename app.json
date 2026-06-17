@@ -22,7 +22,16 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#0050cb",
+          "iosDisplayInForeground": true,
+          "defaultChannel": "default"
+        }
+      ]
     ]
   }
 }
