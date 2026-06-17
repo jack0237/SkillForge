@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillForge - Master New Skills Today</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#003fa4",
+                    "outline": "#727687",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "surface": "#f7f9fc",
+                    "surface-container-highest": "#e0e3e6",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#b3c5ff",
+                    "surface-bright": "#f7f9fc",
+                    "on-secondary-fixed": "#0b1d2d",
+                    "primary": "#0050cb",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "on-secondary-fixed-variant": "#38485a",
+                    "inverse-on-surface": "#eff1f4",
+                    "on-tertiary-fixed": "#390c00",
+                    "background": "#f7f9fc",
+                    "secondary-fixed": "#d2e4fb",
+                    "primary-fixed": "#dae1ff",
+                    "surface-container-low": "#f2f4f7",
+                    "primary-container": "#0066ff",
+                    "on-primary-container": "#f8f7ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-primary-fixed": "#001849",
+                    "outline-variant": "#c2c6d8",
+                    "surface-tint": "#0054d6",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#b7c8de",
+                    "on-secondary-container": "#556679",
+                    "surface-variant": "#e0e3e6",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-container": "#fff6f4",
+                    "on-error-container": "#93000a",
+                    "secondary": "#4f6073",
+                    "on-background": "#191c1e",
+                    "inverse-surface": "#2d3133",
+                    "on-surface-variant": "#424656",
+                    "tertiary": "#a33200",
+                    "surface-dim": "#d8dadd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#832600",
+                    "tertiary-container": "#cc4204",
+                    "secondary-container": "#d2e4fb",
+                    "surface-container": "#eceef1",
+                    "surface-container-high": "#e6e8eb",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "gutter-mobile": "16px",
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "stack-xl": "40px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Anchor (Shared Component Mapping) -->
+<!-- Suppressed for Onboarding as per Relevance Check: Onboarding is task-focused/linear -->
+<main class="relative min-h-screen flex flex-col items-center justify-between px-margin-mobile py-stack-xl overflow-hidden">
+<!-- Abstract Background Element -->
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-container/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-40 -left-20 w-96 h-96 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<!-- Logo/Brand Identity Section -->
+<div class="w-full flex justify-center mb-stack-xl pt-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">SkillForge</span>
+</div>
+</div>
+<!-- Hero Content Section -->
+<div class="flex-1 flex flex-col items-center justify-center w-full max-w-md">
+<!-- Hero Image Container with Depth Logic -->
+<div class="relative w-full aspect-square mb-stack-xl flex items-center justify-center">
+<!-- Decorative Shapes -->
+<div class="absolute inset-0 bg-surface-container-low rounded-[40px] rotate-3 scale-95 opacity-50"></div>
+<div class="relative w-full h-full rounded-[40px] overflow-hidden shadow-lg border border-outline-variant/20 bg-surface-container-lowest animate-float">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-quality photograph of a motivated young adult student focused on a sleek digital interface in a bright, modern minimalist workspace. The lighting is soft and natural, emphasizing a professional yet encouraging atmosphere with clean whites and soft grays. Subtle electric blue accents from the UI elements reflect on the student's face, symbolizing technological progress and high-performance learning. The composition is airy and sophisticated, adhering to a high-end educational brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCGifWAG8SRISj7AYTpqZ_Q_Zl1WHWQs_8OsaDnxBBZN2sfEVkINEegmOBTzrkPZnNArk6I9zSMACEJWy8zrVSu02qU0mFvppDt11_nXxXTYEWN3a-JSdKZJ6KEKxHb5Pgxnv0gkW86lDrWblR1qXJQI58UCXuCKsQXrNuEJm3hs3vUbbuXxZecD9zTProEirk_Wtyoz02yoSdKadShKL50rfXD8xdFR_O6Iu1wBgn6xz5cOKxecbz2mFk7Wqgj-3g0M9IijUdj7GK"/>
+</div>
+<!-- Floating Achievement Badge -->
+<div class="absolute -bottom-4 -right-4 bg-surface-container-lowest p-stack-sm rounded-xl shadow-md border border-outline-variant/10 flex items-center gap-2 animate-bounce transition-all">
+<div class="w-10 h-10 bg-tertiary-container/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Skill Verified</p>
+<p class="text-[10px] text-outline font-medium">Industry Standard</p>
+</div>
+</div>
+</div>
+<!-- Text Content Section -->
+<div class="text-center px-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-sm tracking-tight">
+                    Master New Skills Today
+                </h1>
+<p class="font-body-md text-body-md text-on-secondary-container max-w-[320px] mx-auto leading-relaxed">
+                    Join 5 million learners worldwide and reach your potential with expert-led courses.
+                </p>
+</div>
+</div>
+<!-- Action Section -->
+<div class="w-full max-w-sm flex flex-col gap-stack-md mt-stack-xl">
+<!-- CTA Button: 56px height per design system -->
+<button class="w-full h-[56px] bg-primary-container text-on-primary rounded-xl font-headline-sm text-headline-sm shadow-[0px_8px_20px_rgba(0,102,255,0.15)] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group">
+                Get Started
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full h-[56px] bg-transparent border-2 border-outline-variant text-secondary font-headline-sm text-headline-sm rounded-xl active:bg-surface-container-low transition-colors duration-200">
+                Sign In
+            </button>
+<!-- Social Proof / Trust Indicators -->
+<div class="flex items-center justify-center gap-4 mt-stack-md opacity-60">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-white" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF4gHhAQ6j9efijGBmNbQ7I_HNlbZaZC2avycXJg6wRsbbcXadoTSJ1pbwj3zFAPQEQZIog97QJ5G1yt1rG8OLMWKhAL4AZFbQCXVSTjcUtKVahhnqqvmqCAtbK4oUPiOfm_c_RHK5agyGd0M5A_kZlwkoARBG7cifb9pGoqM8r85tJ39RcWXmCu4A6Dn3rs1b3NFinK-QKoMYn0Z77u-HtlHipaHErG2AWuTMwQNq9cbEbx7OlkR2UhkwWokc4kMTIYmDM6TDQDgj"/>
+<img class="w-6 h-6 rounded-full border border-white" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN6ccwio-iYhUP6h6s6Poi96ASRY8mFwogACeH1GZIBrkBQmP3znNz4O9nUuho8Jy_XfHg5M_7iK_ctdErJ7Xe0CHUnagYn3z51lPjXmppu81hrGFBuHVxtT7AbCTpVBZIVbHaqCaJTSlOQXQTTtEsl3SjN9Ouxuam0B1V5rTlrEUa2u_Ga6X9QVfduzn1VM4NdPJCcDDjl8Li0vhZ6KAWLI6a6plC5EG_bjqsW11TRWGIH_xx1OPEGnXGoosUG_q_1WCFqBvJ8Whr"/>
+<img class="w-6 h-6 rounded-full border border-white" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXEQJtVtaX8BF4Ijw9lWF0HwafTeKqp8jy3bNc69HPFuMnCTLerpR16ukKfk3y-rXChhp0mcNgcOPYJysZphZjmdQVm_QcJH8wZJ5iAqgSGwZAUrDh9Rq52BrR3ReNiZrTiz7CruV7rkBw2DruYO40e6wRMoo6tFlgNOPFuaLnoMiTVPdVz04ctS_voi9ZyaS_1HLg2H9j7TkFZzdDtwpvpiRPjjajFrj-Jj2dYB1L6WUOmmKLjD6Ik-jV9VGCekQuIvkauPryd-oe"/>
+</div>
+<span class="font-label-md text-label-md text-outline">Top-rated by learners</span>
+</div>
+</div>
+<!-- Pagination Indicator (Contextual Visual) -->
+<div class="flex gap-2 mt-stack-lg">
+<div class="w-6 h-2 bg-primary-container rounded-full"></div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+</div>
+</main>
+<!-- Script for micro-interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cta = document.querySelector('button');
+            cta.addEventListener('click', () => {
+                // Subtle feedback on click
+                cta.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    cta.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body></html>

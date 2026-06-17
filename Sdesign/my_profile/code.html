@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SkillForge - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#003fa4",
+                    "outline": "#727687",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "surface": "#f7f9fc",
+                    "surface-container-highest": "#e0e3e6",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#b3c5ff",
+                    "surface-bright": "#f7f9fc",
+                    "on-secondary-fixed": "#0b1d2d",
+                    "primary": "#0050cb",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "on-secondary-fixed-variant": "#38485a",
+                    "inverse-on-surface": "#eff1f4",
+                    "on-tertiary-fixed": "#390c00",
+                    "background": "#f7f9fc",
+                    "secondary-fixed": "#d2e4fb",
+                    "primary-fixed": "#dae1ff",
+                    "surface-container-low": "#f2f4f7",
+                    "primary-container": "#0066ff",
+                    "on-primary-container": "#f8f7ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-primary-fixed": "#001849",
+                    "outline-variant": "#c2c6d8",
+                    "surface-tint": "#0054d6",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#b7c8de",
+                    "on-secondary-container": "#556679",
+                    "surface-variant": "#e0e3e6",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-container": "#fff6f4",
+                    "on-error-container": "#93000a",
+                    "secondary": "#4f6073",
+                    "on-background": "#191c1e",
+                    "inverse-surface": "#2d3133",
+                    "on-surface-variant": "#424656",
+                    "tertiary": "#a33200",
+                    "surface-dim": "#d8dadd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#832600",
+                    "tertiary-container": "#cc4204",
+                    "secondary-container": "#d2e4fb",
+                    "surface-container": "#eceef1",
+                    "surface-container-high": "#e6e8eb",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "gutter-mobile": "16px",
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "stack-xl": "40px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-14 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">SkillForge</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="Alex Johnson" class="w-full h-full object-cover" data-alt="A professional and clean headshot of a person with a friendly expression, captured with high-end portrait lighting in a modern workspace. The aesthetic is bright and minimal, matching a premium e-learning platform's visual identity. The background is softly blurred to keep focus on the subject, utilizing a palette of cool grays and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdECIwoOEIP9u5ngDhNgU_s3ZtaG1fhgxvsbCe5XDlLAalSJMpsOqAtpE2L2rn1RSPb1YK_QrfhvpYWnN4qZhBp1bmfWSLsRhgq739GjG_873f8zMSOqrLjTpd2jA7CzrNGJwUu9ff42M4JNLb_zhdvvf2Vwe7BG5PpBwc3v3jZagqmwAAXT6adY78fM9bHTeu574XrZzZv7DbHuB_JmcAgpGVRCwODNRVnGwTVRsO_SpML_BjAwA1UzlmhKCQx_ZOAsvmzG3vYyPM"/>
+</div>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile space-y-stack-lg">
+<!-- User Identity Section -->
+<section class="flex flex-col items-center text-center space-y-stack-sm">
+<div class="relative">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-4 border-surface overflow-hidden">
+<img alt="Alex Johnson Profile" class="w-full h-full object-cover" data-alt="A professional and clean headshot of a person with a friendly expression, captured with high-end portrait lighting in a modern workspace. The aesthetic is bright and minimal, matching a premium e-learning platform's visual identity. The background is softly blurred to keep focus on the subject, utilizing a palette of cool grays and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWGLYvSS_DfseQMpPuQl0op6bWYlsePSRmo_Dv-09AWWa4q8PVth79GM0emWN6E9krFwFVlfARetzbLx4bSKXmaeE8e27m9ofgJrtF0jX8QWrM7JlQCwtXYNisXuGwB5Z34LpgcFbbUqr1Q4pUeYx4IoBEUWjkcRQz4lZQVopwnTwNCY4hbVpAMQnM8W5RtIFG64TsDO2uICNaOWNOM9MAL3UW9EmfpTNaffahQDhazSg95ZvNp71HMtp1GKe-TjXNJW5hiF2JzO-T"/>
+</div>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary-container p-1 rounded-full border-2 border-surface flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="space-y-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Alex Johnson</h2>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+                    Pro Learner
+                </span>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-stack-md">
+<div class="col-span-2 bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/20 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" data-icon="menu_book">menu_book</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">12</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Courses Completed</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/20 space-y-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="schedule">schedule</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">48</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hours Learned</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/20 space-y-2">
+<span class="material-symbols-outlined text-primary" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">3</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Certificates</p>
+</div>
+</div>
+</section>
+<!-- Recent Activity Section -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Activity</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">View all</button>
+</div>
+<div class="space-y-stack-sm">
+<!-- Achievement Item 1 -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-semibold text-on-surface">UI/UX Master Badge</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Earned for 5 design courses</p>
+</div>
+<p class="font-label-md text-label-md text-outline">2d ago</p>
+</div>
+<!-- Achievement Item 2 -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-semibold text-on-surface">Advanced React Cert</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SkillForge Professional Series</p>
+</div>
+<p class="font-label-md text-label-md text-outline">1w ago</p>
+</div>
+<!-- Achievement Item 3 -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-semibold text-on-surface">7 Day Streak</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consistency is key!</p>
+</div>
+<p class="font-label-md text-label-md text-outline">3w ago</p>
+</div>
+</div>
+</section>
+<!-- Professional Development Section -->
+<section class="bg-primary p-6 rounded-2xl relative overflow-hidden">
+
+<div class="relative z-10 space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Unlock SkillForge Plus</h3>
+<p class="font-body-sm text-body-sm text-on-primary/90">Get unlimited access to 500+ premium courses and professional certificates.</p>
+<button class="w-full h-12 bg-white text-primary font-bold rounded-xl shadow-lg active:scale-95 transition-all">
+                    Upgrade Now
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-dim border-t border-outline-variant/30 shadow-[0px_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-16 w-full px-2 pb-safe">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- My Courses -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">My Courses</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 active:scale-90 duration-200 px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interaction for activity items
+        document.querySelectorAll('.bg-surface-container-lowest').forEach(item => {
+            item.addEventListener('touchstart', () => {
+                item.classList.add('scale-98', 'bg-surface-container');
+            });
+            item.addEventListener('touchend', () => {
+                item.classList.remove('scale-98', 'bg-surface-container');
+            });
+        });
+
+        // Simple scroll listener for header elevation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SkillForge - Sign In</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#390c00",
+                    "tertiary-container": "#cc4204",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed": "#0b1d2d",
+                    "surface": "#f7f9fc",
+                    "on-background": "#191c1e",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "secondary-fixed": "#d2e4fb",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#832600",
+                    "surface-bright": "#f7f9fc",
+                    "background": "#f7f9fc",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "inverse-on-surface": "#eff1f4",
+                    "error-container": "#ffdad6",
+                    "secondary": "#4f6073",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f2f4f7",
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary-fixed": "#dae1ff",
+                    "secondary-fixed-dim": "#b7c8de",
+                    "secondary-container": "#d2e4fb",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "on-tertiary-container": "#fff6f4",
+                    "inverse-primary": "#b3c5ff",
+                    "surface-tint": "#0054d6",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#38485a",
+                    "surface-container": "#eceef1",
+                    "on-surface-variant": "#424656",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d8dadd",
+                    "primary-container": "#0066ff",
+                    "on-primary-fixed": "#001849",
+                    "outline-variant": "#c2c6d8",
+                    "surface-container-highest": "#e0e3e6",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#f8f7ff",
+                    "on-secondary-container": "#556679",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#727687",
+                    "primary": "#0050cb",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e0e3e6",
+                    "surface-container-high": "#e6e8eb",
+                    "tertiary": "#a33200"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-xl": "40px",
+                    "stack-sm": "8px",
+                    "gutter-mobile": "16px",
+                    "unit": "4px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .bg-soft-gradient {
+        background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f9fc 100%);
+      }
+      .input-transition {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor (Manual Shell Control: Hidden as per Transactional Rule) -->
+<main class="min-h-screen flex flex-col px-margin-mobile pt-stack-xl pb-stack-lg bg-soft-gradient">
+<!-- Brand Identity Section -->
+<header class="flex flex-col items-center justify-center mb-stack-xl">
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center mb-stack-md shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container text-[40px]" data-icon="school">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">SkillForge</h1>
+</header>
+<!-- Welcome Message -->
+<section class="mb-stack-xl text-center md:text-left md:max-w-md md:mx-auto w-full">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-sm">Welcome Back</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your learning journey.</p>
+</section>
+<!-- Auth Form -->
+<div class="flex-grow flex flex-col justify-start md:max-w-md md:mx-auto w-full">
+<form class="space-y-stack-lg" id="loginForm" onsubmit="return false">
+<!-- Email Field -->
+<div class="space-y-stack-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant ml-unit" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="mail">mail</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border-outline-variant border rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary input-transition placeholder:text-outline/50" id="email" placeholder="name@example.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-stack-sm">
+<div class="flex justify-between items-center px-unit">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="lock">lock</span>
+<input class="w-full h-14 pl-12 pr-12 bg-surface-container-lowest border-outline-variant border rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary input-transition placeholder:text-outline/50" id="password" placeholder="Enter your password" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password -->
+<div class="flex justify-end">
+<a class="font-label-md text-label-md text-primary hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<!-- Action Button -->
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-headline-sm text-headline-sm rounded-xl shadow-lg active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-stack-sm" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Social Login Divider -->
+<div class="my-stack-xl flex items-center gap-stack-md">
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-outline shrink-0">OR CONTINUE WITH</span>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-stack-md">
+<button class="h-14 bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center gap-stack-sm font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="google">google</span>
+                    Google
+                </button>
+<button class="h-14 bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center gap-stack-sm font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="apple">apps</span>
+                    Apple
+                </button>
+</div>
+</div>
+<!-- Footer Links -->
+<footer class="mt-stack-xl text-center space-y-stack-sm md:max-w-md md:mx-auto w-full">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                New to SkillForge? 
+                <a class="text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Create an account</a>
+</p>
+<p class="font-label-md text-label-md text-outline pt-stack-sm px-margin-mobile">
+                By signing in, you agree to our <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Privacy Policy</a>.
+            </p>
+</footer>
+</main>
+<!-- Visual Atmosphere: Subtle Floating Particles Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            const colors = ['#0050cb', '#d2e4fb', '#cc4204'];
+            
+            for (let i = 0; i < 6; i++) {
+                const dot = document.createElement('div');
+                const size = Math.random() * 100 + 50;
+                dot.style.position = 'fixed';
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.borderRadius = '50%';
+                dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+                dot.style.filter = 'blur(60px)';
+                dot.style.opacity = '0.05';
+                dot.style.zIndex = '-1';
+                dot.style.top = `${Math.random() * 100}%`;
+                dot.style.left = `${Math.random() * 100}%`;
+                
+                container.appendChild(dot);
+                
+                animateDot(dot);
+            }
+
+            function animateDot(el) {
+                const duration = Math.random() * 20000 + 10000;
+                el.animate([
+                    { transform: 'translate(0, 0)' },
+                    { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)` },
+                    { transform: 'translate(0, 0)' }
+                ], {
+                    duration: duration,
+                    iterations: Infinity,
+                    easing: 'ease-in-out'
+                });
+            }
+        });
+    </script>
+</body></html>

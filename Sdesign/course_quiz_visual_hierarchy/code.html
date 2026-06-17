@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillForge Quiz Session</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .option-card-selected {
+            border-color: #0050cb;
+            background-color: #f8f7ff;
+            box-shadow: 0px 8px 20px rgba(0, 102, 255, 0.1);
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#424656",
+                        "surface-container-highest": "#e0e3e6",
+                        "tertiary-container": "#cc4204",
+                        "on-secondary-container": "#556679",
+                        "surface": "#f7f9fc",
+                        "primary-container": "#0066ff",
+                        "on-surface": "#191c1e",
+                        "on-error-container": "#93000a",
+                        "secondary": "#4f6073",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface-variant": "#e0e3e6",
+                        "on-secondary-fixed": "#0b1d2d",
+                        "surface-tint": "#0054d6",
+                        "inverse-primary": "#b3c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c2c6d8",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbd0",
+                        "secondary-fixed-dim": "#b7c8de",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae1ff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#38485a",
+                        "on-tertiary-container": "#fff6f4",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "primary": "#0050cb",
+                        "surface-container-low": "#f2f4f7",
+                        "secondary-container": "#d2e4fb",
+                        "on-primary-container": "#f8f7ff",
+                        "surface-dim": "#d8dadd",
+                        "outline": "#727687",
+                        "surface-container": "#eceef1",
+                        "background": "#f7f9fc",
+                        "on-primary-fixed": "#001849",
+                        "surface-container-high": "#e6e8eb",
+                        "secondary-fixed": "#d2e4fb",
+                        "surface-bright": "#f7f9fc",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "tertiary": "#a33200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "gutter-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "20px",
+                        "stack-xl": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-surface/80 flex items-center justify-between px-margin-mobile h-14">
+<button class="transition-colors duration-200 active:scale-95 text-on-surface flex items-center justify-center p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold">Quiz Session</h1>
+<button class="transition-colors duration-200 active:scale-95 text-on-surface flex items-center justify-center p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-14 mb-32 px-margin-mobile pt-stack-lg">
+<!-- Progress Section -->
+<section class="mb-stack-xl">
+<div class="flex justify-between items-end mb-stack-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Question 1 of 5</span>
+<span class="font-label-md text-label-md text-primary font-bold">20%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[20%] transition-all duration-500 ease-out"></div>
+</div>
+</section>
+<!-- Question Header -->
+<section class="mb-stack-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">
+                What is the primary purpose of visual hierarchy in UI design?
+            </h2>
+</section>
+<!-- Quiz Illustration Placeholder (Atmospheric) -->
+<div class="mb-stack-xl w-full h-48 rounded-xl overflow-hidden relative bg-surface-container-low group">
+<img alt="Visual Hierarchy Concept" class="w-full h-full object-cover opacity-60 mix-blend-multiply transition-transform duration-700 group-hover:scale-105" data-alt="A clean and modern minimalist workspace with a sleek digital tablet displaying a abstract user interface layout. The lighting is soft and natural, coming from a nearby window, creating a serene and professional atmosphere. The color palette consists of cool grays, deep navy blues, and bright electric blue highlights, reflecting a focused e-learning environment for SkillForge. Minimalist geometric shapes in the background emphasize the concept of visual structure and organization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT_Ioe3-Q1bR6W3CaRbHxzve-fzYvLQn-_7-qw45KGV3x2blF4gatxKCicmKE0vTa9lN8IuqoXLNZ5lk6egSug-VXesC3bhXTpPf37e1BjE2W5ChjL8VOEBZv00ZmMtTS9pAZ3rDjOGZRUvL1CMiuHz0Oiqwpe4qNbOc280GaMtk4LDyJYNCpOzaTkJTk54gvkQNFOyXsRQALzbuYhE1HcNRfX-w-rLSL-ah7V4R8VNZiW3NUiix78EtnFYCU-WnOFxWCU_Wa9KU_I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40"></div>
+</div>
+<!-- Options List -->
+<section class="space-y-stack-md" id="options-container">
+<button class="quiz-option w-full flex items-center p-stack-md bg-surface-container-lowest border border-outline-variant rounded-xl text-left transition-all duration-200 hover:border-primary/50 active:scale-[0.98]" onclick="selectOption(this)">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mr-stack-md font-bold text-on-surface-variant flex-shrink-0 transition-colors">A</div>
+<span class="font-body-md text-on-surface">To make the design look pretty and colorful</span>
+</button>
+<button class="quiz-option w-full flex items-center p-stack-md bg-surface-container-lowest border border-outline-variant rounded-xl text-left transition-all duration-200 hover:border-primary/50 active:scale-[0.98]" onclick="selectOption(this)">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mr-stack-md font-bold text-on-surface-variant flex-shrink-0 transition-colors">B</div>
+<span class="font-body-md text-on-surface">To guide the user's attention to important elements</span>
+</button>
+<button class="quiz-option w-full flex items-center p-stack-md bg-surface-container-lowest border border-outline-variant rounded-xl text-left transition-all duration-200 hover:border-primary/50 active:scale-[0.98]" onclick="selectOption(this)">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mr-stack-md font-bold text-on-surface-variant flex-shrink-0 transition-colors">C</div>
+<span class="font-body-md text-on-surface">To fill up white space on the screen</span>
+</button>
+<button class="quiz-option w-full flex items-center p-stack-md bg-surface-container-lowest border border-outline-variant rounded-xl text-left transition-all duration-200 hover:border-primary/50 active:scale-[0.98]" onclick="selectOption(this)">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mr-stack-md font-bold text-on-surface-variant flex-shrink-0 transition-colors">D</div>
+<span class="font-body-md text-on-surface">To increase the number of interactive elements</span>
+</button>
+</section>
+</main>
+<!-- Fixed Action Button (Contextual) -->
+<div class="fixed bottom-16 left-0 w-full px-margin-mobile py-stack-lg bg-gradient-to-t from-background via-background/95 to-transparent z-40">
+<button class="w-full h-14 bg-primary-container text-on-primary font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all duration-300 opacity-50 cursor-not-allowed active:scale-95" disabled="" id="next-button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<footer class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface px-unit z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-transform duration-150 active:scale-90 hover:text-primary">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-md text-label-md">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-md text-label-md">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-transform duration-150 active:scale-90 hover:text-primary">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-md text-label-md">Progress</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-transform duration-150 active:scale-90 hover:text-primary">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</footer>
+<script>
+        function selectOption(element) {
+            // Remove selection from all options
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('option-card-selected', 'border-primary', 'bg-primary-container/10');
+                opt.classList.add('bg-surface-container-lowest', 'border-outline-variant');
+                const badge = opt.querySelector('div');
+                badge.classList.remove('bg-primary-container', 'text-on-primary');
+                badge.classList.add('bg-surface-container', 'text-on-surface-variant');
+            });
+
+            // Add selection to clicked element
+            element.classList.add('option-card-selected', 'border-primary', 'bg-primary-container/10');
+            element.classList.remove('bg-surface-container-lowest', 'border-outline-variant');
+            
+            const badge = element.querySelector('div');
+            badge.classList.add('bg-primary-container', 'text-on-primary');
+            badge.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+            // Enable Next button
+            const nextBtn = document.getElementById('next-button');
+            nextBtn.removeAttribute('disabled');
+            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            nextBtn.classList.add('opacity-100', 'cursor-pointer');
+        }
+
+        // Simple Next Interaction
+        document.getElementById('next-button').addEventListener('click', function() {
+            if (!this.hasAttribute('disabled')) {
+                // Visual feedback of navigation
+                this.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
+                setTimeout(() => {
+                    alert('Moving to Question 2 of 5. Great job!');
+                    location.reload();
+                }, 800);
+            }
+        });
+    </script>
+</body></html>
