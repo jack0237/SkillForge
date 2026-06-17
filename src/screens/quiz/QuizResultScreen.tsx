@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { CatalogStackParamList } from '../../navigation/CatalogStack';
+import { useAuth } from '../../context/AuthContext';
 import { colors, spacing, radius } from '../../constants/theme';
 
 type Props = {
@@ -13,7 +14,9 @@ type Props = {
 
 export default function QuizResultScreen({ navigation, route }: Props) {
   const { quizId, score, total, passed, courseTitle, playlistId } = route.params;
+  const { user } = useAuth();
   const percent = total > 0 ? Math.round((score / total) * 100) : 0;
+  const userName = user?.user_metadata?.full_name ?? user?.email ?? 'Student';
 
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
@@ -73,12 +76,12 @@ export default function QuizResultScreen({ navigation, route }: Props) {
           <TouchableOpacity
             style={styles.primaryButton}
             onPress={() =>
-              navigation.navigate('CourseDetail', {
-                playlistId,
-                title: courseTitle,
-                description: '',
-                thumbnail_url: null,
-                lesson_count: 0,
+              navigation.navigate('Certificate', {
+                userName,
+                courseTitle,
+                score,
+                total,
+                completedAt: new Date().toISOString(),
               })
             }
             activeOpacity={0.85}

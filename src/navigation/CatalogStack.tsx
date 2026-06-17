@@ -5,6 +5,7 @@ import CourseDetailScreen from '../screens/course/CourseDetailScreen';
 import LessonPlayerScreen from '../screens/course/LessonPlayerScreen';
 import QuizScreen from '../screens/quiz/QuizScreen';
 import QuizResultScreen from '../screens/quiz/QuizResultScreen';
+import CertificateScreen from '../screens/certificate/CertificateScreen';
 
 export type LessonSummary = {
   youtube_video_id: string;
@@ -44,6 +45,13 @@ export type CatalogStackParamList = {
     courseTitle: string;
     playlistId: string;
   };
+  Certificate: {
+    userName: string;
+    courseTitle: string;
+    score: number;
+    total: number;
+    completedAt: string;
+  };
 };
 
 const Stack = createStackNavigator<CatalogStackParamList>();
@@ -56,6 +64,7 @@ export default function CatalogStack() {
       <Stack.Screen name="LessonPlayer" component={LessonPlayerScreen} />
       <Stack.Screen name="Quiz" component={QuizScreen} />
       <Stack.Screen name="QuizResult" component={QuizResultScreen} />
+      <Stack.Screen name="Certificate" component={CertificateScreen} />
     </Stack.Navigator>
   );
 }
