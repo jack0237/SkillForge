@@ -1,12 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { Home, Search, BookOpen, User } from 'lucide-react-native';
 import CatalogStack from './CatalogStack';
 import { CatalogStackParamList } from './CatalogStack';
 import DashboardScreen from '../screens/home/DashboardScreen';
 import MyCoursesScreen from '../screens/learning/MyCoursesScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
 import { colors, spacing } from '../constants/theme';
 
 export type AppTabParamList = {
@@ -17,14 +18,6 @@ export type AppTabParamList = {
 };
 
 const Tab = createBottomTabNavigator<AppTabParamList>();
-
-function Placeholder({ label }: { label: string }) {
-  return (
-    <View style={styles.placeholder}>
-      <Text style={styles.placeholderText}>{label}</Text>
-    </View>
-  );
-}
 
 export default function AppNavigator() {
   return (
@@ -57,10 +50,9 @@ export default function AppNavigator() {
 
       <Tab.Screen
         name="Profile"
+        component={ProfileScreen}
         options={{ tabBarIcon: ({ color, size }) => <User size={size} color={color} strokeWidth={2} /> }}
-      >
-        {() => <Placeholder label="Profile — coming soon" />}
-      </Tab.Screen>
+      />
     </Tab.Navigator>
   );
 }
@@ -76,15 +68,5 @@ const styles = StyleSheet.create({
   tabLabel: {
     fontSize: 11,
     fontWeight: '600',
-  },
-  placeholder: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.background,
-  },
-  placeholderText: {
-    color: colors.onSurfaceVariant,
-    fontSize: 14,
   },
 });
